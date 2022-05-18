@@ -93,7 +93,7 @@ pipeline {
         stage('Deploying and Cleaning') {
             steps {
                 echo 'Deploying and cleaning'
-                sh 'docker image rm hoangledinh65/springboot-image:1.0 || echo "this image does not exist" '
+                sh 'docker image rm truongton812/springboot-image:1.0 || echo "this image does not exist" '
                 sh 'docker container stop my-demo-springboot || echo "this container does not exist" '
                 sh 'docker network create jenkins || echo "this network exists"'
                 sh 'echo y | docker container prune '
